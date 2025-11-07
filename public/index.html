@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Face Scene Generator</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>3D Face Scene Generator</h1>
+            <p>Upload your photo and describe a scene to place yourself in 3D!</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="input-group">
+                <label for="imageUpload">Upload Your Photo:</label>
+                <input type="file" id="imageUpload" accept="image/*">
+                <div id="imagePreview" class="preview"></div>
+            </div>
+
+            <div class="input-group">
+                <label for="scenePrompt">Describe Your Scene:</label>
+                <textarea
+                    id="scenePrompt"
+                    placeholder="e.g., 'Place me in a futuristic cyberpunk city with neon lights' or 'Put me in a peaceful forest with sunlight filtering through trees'"
+                    rows="4"
+                ></textarea>
+            </div>
+
+            <button id="generateBtn" class="generate-btn">Generate 3D Scene</button>
+        </div>
+
+        <div id="loadingIndicator" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Creating your 3D scene...</p>
+        </div>
+
+        <div id="canvasContainer" class="canvas-container hidden">
+            <canvas id="sceneCanvas"></canvas>
+            <div class="controls">
+                <button id="resetCamera">Reset Camera</button>
+                <button id="downloadScene">Download Scene</button>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error hidden"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
